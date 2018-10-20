@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 public class F1 extends Fragment {
     private TextView lottery;
+    private View view;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,9 @@ public class F1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.v("brad", "F1:onCreateView()");
-        View view = inflater.inflate(R.layout.fragment_f1, container, false);
+        if (view == null) {
+            view = inflater.inflate(R.layout.fragment_f1, container, false);
+        }
 
         Button btn = view.findViewById(R.id.f1_btn);
         lottery = view.findViewById(R.id.f1_lottery);
